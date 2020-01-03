@@ -14,16 +14,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
         children: <Widget>[
           _userAccountDrawerHeader(),
           _createDrawerItem(icon: Icons.home, text: 'Home', onTap: () {}),
-          _createDrawerItem(icon: Icons.person, text: 'Profile', onTap: () {}),
-          Divider(),
-          _createDrawerItem(
-              icon: Icons.settings, text: 'Settings', onTap: () {}),
+          _createDrawerItem(icon: Icons.share, text: 'Share', onTap: () {}),
+          _createDrawerItem(icon: Icons.star, text: 'Rate us', onTap: () {}),
           _createDrawerItem(
               icon: Icons.bug_report, text: 'Report an issue', onTap: () {}),
           _createDrawerItem(
               icon: Icons.exit_to_app, text: 'Exit', onTap: () {}),
-          Divider(),
-          _createDrawerItem(icon: Icons.system_update, text: 'Version: 0.0.1'),
         ],
       ),
     );
@@ -37,8 +33,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
           image: AssetImage('assets/header.png'),
         ),
       ),
-      accountName: Text('Design Patterns in Dart'),
-      accountEmail: Text(''),
+      accountName: Text(''),
+      accountEmail: Text('Design Patterns in Dart'),
       currentAccountPicture: CircleAvatar(
         child: Text(
           'DP',
