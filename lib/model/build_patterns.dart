@@ -13,7 +13,7 @@ class BuildPatterns extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
+      padding: const EdgeInsets.only(top: 8.0),
       child: ListView.builder(
           itemCount: this.patterns.length,
           itemBuilder: (context, i) {
