@@ -1,3 +1,4 @@
+import 'package:dart_design_pattern/widgets/creational/abstract_factory.dart';
 import 'package:flutter/material.dart';
 
 import '../model/patterns.dart';
@@ -16,7 +17,11 @@ class Utils {
 
   static List<Patterns> buildSCreationalList() {
     return [
-      Patterns(abv: 'AB', name: 'Abstract Factory', onTap: () {}),
+      Patterns(
+          abv: 'AF',
+          name: 'Abstract Factory',
+          onTap: () {},
+          widget: AbstractFactory()),
       Patterns(abv: 'BU', name: 'Builder', onTap: () {}),
       Patterns(abv: 'FM', name: 'Factory Method', onTap: () {}),
       Patterns(abv: 'PT', name: 'Prototype', onTap: () {}),
@@ -53,5 +58,4 @@ class Utils {
       Patterns(abv: 'VI', name: 'Visitor', onTap: () {}),
     ];
   }
-
 }
