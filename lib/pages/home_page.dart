@@ -21,6 +21,7 @@ class _MyHomePageState extends State<HomePage> {
       child: Scaffold(
         drawer: CustomDrawer(),
         appBar: AppBar(
+          elevation: 0.0,
           bottom: TabBar(
             tabs: [
               Tab(text: 'Creational'),
