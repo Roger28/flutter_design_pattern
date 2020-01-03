@@ -10,15 +10,44 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Design Pattern with Dart',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'GoogleSans'
-      ),
+      theme: _buildMyHomeTheme(),
       initialRoute: HomePage.routeName,
       routes: {
         HomePage.routeName: (context) => HomePage(),
         PatternPage.routeName: (context) => PatternPage(),
       },
+    );
+  }
+
+  ThemeData _buildMyHomeTheme() {
+    final ThemeData base = ThemeData.light();
+    return base.copyWith(
+      primaryColor: Colors.blue,
+      scaffoldBackgroundColor: Colors.white,
+      textTheme: _buildMyHomeTextTheme(base.textTheme),
+      primaryTextTheme: _buildMyHomeTextTheme(base.primaryTextTheme),
+      accentTextTheme: _buildMyHomeTextTheme(base.accentTextTheme),
+    );
+  }
+
+  TextTheme _buildMyHomeTextTheme(TextTheme base) {
+    return base
+        .copyWith(
+      headline: base.headline.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
+      title: base.title.copyWith(fontSize: 18.0),
+      caption: base.caption.copyWith(
+        fontWeight: FontWeight.w400,
+        fontSize: 14.0,
+      ),
+      body2: base.body2.copyWith(
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+      ),
+    )
+        .apply(
+      fontFamily: 'GoogleSans',
     );
   }
 }
