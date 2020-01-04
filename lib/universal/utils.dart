@@ -18,17 +18,24 @@ class Utils {
   static List<Patterns> buildCreationalList() {
     return [
       Patterns(
-          abv: 'AF',
-          name: 'Abstract Factory',
-          onTap: () {},
-          widget: AbstractFactory()),
+        abv: 'AF',
+        name: 'Abstract Factory',
+        onTap: () {},
+        widget: AbstractFactory(),
+      ),
       Patterns(abv: 'BU', name: 'Builder', onTap: () {}),
       Patterns(
-          abv: 'FM',
-          name: 'Factory Method',
-          onTap: () {},
-          widget: FactoryMethod()),
-      Patterns(abv: 'PT', name: 'Prototype', onTap: () {}),
+        abv: 'FM',
+        name: 'Factory Method',
+        onTap: () {},
+        widget: FactoryMethod(),
+      ),
+      Patterns(
+        abv: 'PT',
+        name: 'Prototype',
+        onTap: () {},
+        widget: Prototype(),
+      ),
       Patterns(abv: 'SG', name: 'Singleton', onTap: () {}),
     ];
   }
