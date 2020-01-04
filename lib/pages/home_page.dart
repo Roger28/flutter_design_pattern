@@ -34,7 +34,7 @@ class _MyHomePageState extends State<HomePage> {
         ),
         body: TabBarView(
           children: [
-            BuildPatterns(Utils.buildSCreationalList(), 0),
+            BuildPatterns(Utils.buildCreationalList(), 0),
             BuildPatterns(Utils.buildStructuralList(), 1),
             BuildPatterns(Utils.buildBehaviouralList(), 2),
           ],
