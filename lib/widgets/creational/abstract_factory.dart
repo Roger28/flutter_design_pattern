@@ -1,3 +1,4 @@
+import 'package:dart_design_pattern/universal/utils.dart';
 import 'package:flutter/material.dart';
 
 class AbstractFactory extends StatelessWidget {
@@ -26,7 +27,7 @@ class AbstractFactory extends StatelessWidget {
 
   final String _consequences = 'Consequências:';
   final String _contentConsequences =
-      '\n - Controla as classes dos objetos que a aplicação cria. Clientes manipulam instâncias somente através de suas interfaces abstratas. Nomes de classes estão isolados nas fábricas concretas, eles não aparecem no código do cliente.'
+      '\n- Controla as classes dos objetos que a aplicação cria. Clientes manipulam instâncias somente através de suas interfaces abstratas. Nomes de classes estão isolados nas fábricas concretas, eles não aparecem no código do cliente.'
       '\n- A classe da fábrica concreta sendo utilizada aparece somente uma vez na aplicação, facilitando modificações. A família de produtos mudaria toda de uma vez.'
       '\n- Garante que os objetos utilizados são todos de uma mesma família, representada pela fábrica concreta sendo utilizada.'
       '\n- A interface da fábrica abstrata torna fixo o conjunto de produtos que podem ser criados.'
@@ -55,71 +56,38 @@ class AbstractFactory extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        Container(
-          padding: const EdgeInsets.all(16.0),
-          child: _buildText(title: _purpose, body: _contentPurpose),
+        Utils.buildFirstSection(
+          title: _purpose,
+          body: _contentPurpose,
         ),
-        _buildContainer(title: _applicability, body: _contentApplicability),
-        _buildImage(title: 'Estrutura:', path: 'assets/abs_fact.png'),
-        _buildContainer(title: _participants, body: _contentParticipants),
-        _buildContainer(title: _collaborations, body: _contentCollaborations),
-        _buildContainer(title: _consequences, body: _contentConsequences),
-        _buildContainer(title: _implementation, body: _contentImplementation),
-        _buildContainer(title: _related, body: _contentRelated),
+        Utils.buildContainer(
+          title: _applicability,
+          body: _contentApplicability,
+        ),
+        Utils.buildImage(
+          imagePath: 'assets/abs_fact.png',
+        ),
+        Utils.buildContainer(
+          title: _participants,
+          body: _contentParticipants,
+        ),
+        Utils.buildContainer(
+          title: _collaborations,
+          body: _contentCollaborations,
+        ),
+        Utils.buildContainer(
+          title: _consequences,
+          body: _contentConsequences,
+        ),
+        Utils.buildContainer(
+          title: _implementation,
+          body: _contentImplementation,
+        ),
+        Utils.buildContainer(
+          title: _related,
+          body: _contentRelated,
+        ),
       ],
-    );
-  }
-
-  Widget _buildImage({String title, String path}) {
-    return Container(
-      padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            title,
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 8.0),
-            child: Image.asset(
-              path,
-              fit: BoxFit.cover,
-              filterQuality: FilterQuality.high,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildContainer({String title, String body}) {
-    return Container(
-      padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
-      child: _buildText(title: title, body: body),
-    );
-  }
-
-  Widget _buildText({String title, String body}) {
-    return RichText(
-      softWrap: true,
-      text: TextSpan(
-        text: title,
-        style: TextStyle(
-          color: Colors.black87,
-          fontFamily: 'GoogleSans',
-        ),
-        children: [
-          TextSpan(
-            text: body,
-            style: TextStyle(
-              color: Colors.grey[500],
-              fontFamily: 'GoogleSans',
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
