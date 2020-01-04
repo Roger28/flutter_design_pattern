@@ -1,4 +1,4 @@
-import 'package:dart_design_pattern/widgets/creational/abstract_factory.dart';
+import 'package:dart_design_pattern/widgets/index.dart';
 import 'package:flutter/material.dart';
 
 import '../model/patterns.dart';
@@ -15,7 +15,7 @@ class Utils {
     }
   }
 
-  static List<Patterns> buildSCreationalList() {
+  static List<Patterns> buildCreationalList() {
     return [
       Patterns(
           abv: 'AF',
@@ -23,7 +23,11 @@ class Utils {
           onTap: () {},
           widget: AbstractFactory()),
       Patterns(abv: 'BU', name: 'Builder', onTap: () {}),
-      Patterns(abv: 'FM', name: 'Factory Method', onTap: () {}),
+      Patterns(
+          abv: 'FM',
+          name: 'Factory Method',
+          onTap: () {},
+          widget: FactoryMethod()),
       Patterns(abv: 'PT', name: 'Prototype', onTap: () {}),
       Patterns(abv: 'SG', name: 'Singleton', onTap: () {}),
     ];
@@ -57,5 +61,68 @@ class Utils {
       Patterns(abv: 'TM', name: 'Template Method', onTap: () {}),
       Patterns(abv: 'VI', name: 'Visitor', onTap: () {}),
     ];
+  }
+
+  static Widget buildFirstSection({String title, String body}) {
+    return Container(
+      padding: const EdgeInsets.all(16.0),
+      child: buildText(
+        title: title,
+        body: body,
+      ),
+    );
+  }
+
+  static Widget buildImage({String imagePath}) {
+    return Container(
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Estrutura:',
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 8.0),
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+              filterQuality: FilterQuality.high,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static Widget buildContainer({String title, String body}) {
+    return Container(
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+      child: buildText(title: title, body: body),
+    );
+  }
+
+  static Widget buildText({String title, String body}) {
+    return RichText(
+      softWrap: true,
+      text: TextSpan(
+        text: title,
+        style: TextStyle(
+          color: Colors.black87,
+          fontFamily: 'GoogleSans',
+        ),
+        children: [
+          TextSpan(
+            text: body,
+            style: TextStyle(
+              color: Colors.grey[500],
+              fontFamily: 'GoogleSans',
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
