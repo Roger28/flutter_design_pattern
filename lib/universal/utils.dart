@@ -36,7 +36,12 @@ class Utils {
         onTap: () {},
         widget: Prototype(),
       ),
-      Patterns(abv: 'SG', name: 'Singleton', onTap: () {}),
+      Patterns(
+        abv: 'S',
+        name: 'Singleton',
+        onTap: () {},
+        widget: Singleton(),
+      ),
     ];
   }
 
