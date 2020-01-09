@@ -50,6 +50,7 @@ class Prototype extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         Utils.buildFirstSection(
           title: _purpose,
