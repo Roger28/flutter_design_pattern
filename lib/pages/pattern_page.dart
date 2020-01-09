@@ -10,10 +10,11 @@ class PatternPage extends StatelessWidget {
     final Patterns args = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0.0,
-          title: Text(args.name),
-        ),
-        body: args.widget);
+      appBar: AppBar(
+        elevation: 0.0,
+        title: Text(args.name),
+      ),
+      body: args.widget,
+    );
   }
 }

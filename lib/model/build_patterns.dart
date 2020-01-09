@@ -15,6 +15,7 @@ class BuildPatterns extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 8.0),
       child: ListView.builder(
+          physics: BouncingScrollPhysics(),
           itemCount: this.patterns.length,
           itemBuilder: (context, i) {
             return Column(
